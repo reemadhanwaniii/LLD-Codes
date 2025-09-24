@@ -1,0 +1,2 @@
+## DTO(Data Transfer Object) 
+    our System is understanding one type of pojo but the system with which we are interacting understand different type of POJO so we write dedicated DTO classes to convert objects
