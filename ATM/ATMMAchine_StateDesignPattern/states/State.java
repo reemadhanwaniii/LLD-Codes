@@ -8,11 +8,13 @@ public interface State {
 
     void ejectCard();
 
-    int dispenseCash(int transactionId);
+    int dispenseCash(Card card,int amount,int transactionId);
 
-    boolean readCardAndPin(Card card);
+    boolean readCardAndPin(Card card,String pin);
 
-    boolean withdrawCash(int transactionId,int amount);
+    boolean withdrawCash(Card card,int transactionId,int amount);
+
+    boolean cancelTransaction(int transactionId);
 
     ATMState getATMState();
 

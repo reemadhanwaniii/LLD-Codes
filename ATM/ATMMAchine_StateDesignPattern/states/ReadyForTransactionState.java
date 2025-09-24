@@ -2,6 +2,7 @@ package states;
 
 import DTOs.CreateTransactionDTO;
 import apis.BackendAPI;
+import apis.NodeBackendAPI;
 import enums.ATMState;
 import models.Card;
 import models.ATM;
@@ -11,9 +12,9 @@ public class ReadyForTransactionState implements State{
     private final ATM atm;
     private final BackendAPI backendAPI;
 
-    public ReadyForTransactionState(ATM atm, BackendAPI backendAPI) {
+    public ReadyForTransactionState(ATM atm) {
         this.atm = atm;
-        this.backendAPI = backendAPI;
+        this.backendAPI = new NodeBackendAPI();
     }
 
     @Override
@@ -26,7 +27,7 @@ public class ReadyForTransactionState implements State{
         }
 
 //        Now we have the transactionId from the backend we can now move to Read card state;
-        this.atm.setAtmState(new ReadCardDetailsAndPinState());
+        this.atm.setAtmState(new ReadCardDetailsAndPinState(this.atm));
         return transactionId;
     }
 
@@ -36,18 +37,23 @@ public class ReadyForTransactionState implements State{
     }
 
     @Override
-    public int dispenseCash(int transactionId) {
+    public int dispenseCash(Card card,int amount,int transactionId) {
         throw new IllegalStateException("Cannot dispense cash");
     }
 
     @Override
-    public boolean readCardAndPin(Card card) {
+    public boolean readCardAndPin(Card card,String pin) {
         throw new IllegalStateException("Can't read card");
     }
 
     @Override
-    public boolean withdrawCash(int transactionId, int amount) {
+    public boolean withdrawCash(Card card,int transactionId, int amount) {
         throw new IllegalStateException("Cannt withdraw cash");
+    }
+
+    @Override
+    public boolean cancelTransaction(int transactionId) {
+        throw new IllegalStateException("Cannot cancel transaction");
     }
 
     @Override
