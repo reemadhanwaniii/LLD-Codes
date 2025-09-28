@@ -7,6 +7,9 @@
       <sourceFolder url="file://$MODULE_DIR$/ATM/Brute-force" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ATM/NaiveImpl" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Cricbuzz" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/IteratorRepositoryPattern" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RouteHandler_chainOfResponsibilityPattern" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

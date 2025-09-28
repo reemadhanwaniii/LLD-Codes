@@ -8,7 +8,7 @@ public interface State {
 
     void ejectCard();
 
-    int dispenseCash(Card card,int amount,int transactionId);
+    int dispenseCash(Card card, int amount, int transactionId);
 
     boolean readCardAndPin(Card card,String pin);
 
