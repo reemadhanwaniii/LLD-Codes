@@ -14,10 +14,11 @@ public class Match {
     private Innings innings1;
     private Innings innings2;
     private List<String> commentary;
+    private boolean isFirstInnings;
 
 
 
-    public Match(String matchId, Team team1, Team team2, String date, String venue, String time, String status, Innings innings1, Innings innings2) {
+    public Match(String matchId, Team team1, Team team2, String date, String venue, String time, String status, Innings innings1, Innings innings2,boolean isFirstInnings) {
         this.matchId = matchId;
         this.team1 = team1;
         this.team2 = team2;
@@ -28,6 +29,7 @@ public class Match {
         this.innings1 = innings1;
         this.innings2 = innings2;
         this.commentary = new ArrayList<>();
+        this.isFirstInnings = true;
     }
 
     public String getMatchId() {
@@ -102,11 +104,18 @@ public class Match {
         this.innings2 = innings2;
     }
 
-    public List<String> getCommentary() {
+    public String getCommentary() {
         return commentary;
     }
 
     public void setCommentary(List<String> commentary) {
         this.commentary = commentary;
+    }
+
+    public boolean getIsFirstInnings() {
+            return isFirstInnings;
+    }
+    public void setIsFirstInnings(boolean isFirstInnings) {
+        this.isFirstInnings = isFirstInnings;
     }
 }
