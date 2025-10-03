@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CommentarySubscriber implements Subscriber{
 
-   private List<String> commentaries;
+    List<String> commentaries;
    private List<Producer> producers;
 
    public CommentarySubscriber(List<Producer> producers) {
