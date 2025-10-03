@@ -12,4 +12,12 @@ public abstract class Piece {
         this.pieceName = pieceName;
         this.color = color;
     }
+
+    public void setKilled(boolean killed) {
+        this.killed = killed;
+    }
+
+    public boolean getKilled() {
+        return killed;
+    }
 }

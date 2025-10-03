@@ -22,12 +22,12 @@ public class Pawn extends Piece implements ChessPiece{
 
     @Override
     public boolean isKilled() {
-        return false;
+        return this.getKilled();
     }
 
     @Override
-    public boolean setKilled(boolean isKilled) {
-        return false;
+    public void setKilled(boolean killed) {
+        this.setKilled(killed);
     }
 
     @Override
